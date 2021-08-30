@@ -1,4 +1,4 @@
-# Victor Lejon (200210315552)
+# Victor Lejon
 
 
 def solve():
