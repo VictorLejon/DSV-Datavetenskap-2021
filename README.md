@@ -5,7 +5,7 @@
 	<li>
 	ISDV
 		<ul>
-			<li>Veckodagar.py</li>
+			<li>veckodag.py</li>
 		</ul>
 	</li>
 </ul>
