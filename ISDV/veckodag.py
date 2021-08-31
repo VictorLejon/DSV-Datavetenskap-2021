@@ -77,7 +77,7 @@ def getInput(input_name, limit_max, limit_min):
             ## Break loop on correct interval
             break
         else:
-            print("Out of allowed range " + str(limit_min) + " to " + str(limit_max))
+            print("Out of range " + str(limit_min) + " to " + str(limit_max))
     return i
 
 solve()
