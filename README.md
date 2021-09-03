@@ -5,7 +5,8 @@
 	<li>
 	ISDV
 		<ul>
-			<li>veckodag.py</li>
+			<li>Veckodagy</li>
+			<li>Nian</li>
 		</ul>
 	</li>
 </ul>
