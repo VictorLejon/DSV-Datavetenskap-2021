@@ -65,8 +65,7 @@ for d_w in d_w_list:
 for w in m_w_list:
     print("".join(w))
 
-print("\n")
-print(str(len(f_m_w_list)) + " ord använder alla bokstäver:")
+print("\n" + str(len(f_m_w_list)) + " ord använder alla bokstäver:")
 for w in f_m_w_list:
     print("".join(w))
 
