@@ -5,7 +5,7 @@
 	<li>
 	ISDV
 		<ul>
-			<li>Veckodagy</li>
+			<li>Veckodag</li>
 			<li>Nian</li>
 		</ul>
 	</li>
