@@ -1,4 +1,4 @@
-## Victor Lejon
+## Victor Lejon 0210315552
 
 
 ## Parameters:
@@ -55,7 +55,7 @@ for d_w in d_w_list:
             c_w_list.remove(l)
 
     ## Add to correct words list if requirements met
-    if ("s" in d_w and len(d_w) >= 4 and correct):
+    if (sc in d_w and len(d_w) >= 4 and correct):
         m_w_list.append(d_w)
         if (len(d_w) == m_len):
             f_m_w_list.append(d_w)
