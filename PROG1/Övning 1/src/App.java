@@ -14,11 +14,11 @@ public class App {
             String action = in.nextLine();
             switch(action){
                 case "1":
-                    text = cypher(true);
+                    text = cipher(true);
                     System.out.println(text);
                     break;
                 case "2":
-                    text = cypher(false);
+                    text = cipher(false);
                     System.out.println(text);
                     break;
                 case "3":
@@ -37,11 +37,11 @@ public class App {
         return data.toCharArray();
     }
 
-    private static String cypher(boolean encrypt){
+    private static String cipher(boolean encrypt){
         char[] letters = getInput();
 
         // Chiffer
-        char[] cypheredChars = new char[letters.length];
+        char[] cipheredChars = new char[letters.length];
 
         int i = 0;
         for (char letter : letters) {
@@ -49,12 +49,12 @@ public class App {
 
             // Check for uppercase
             letter = (Character.isLowerCase(letter)) ? alfabet[newIndex] : Character.toUpperCase(alfabet[newIndex]);
-            cypheredChars[i] = letter;
+            cipheredChars[i] = letter;
             i++;
         }
 
         
-        return new String(cypheredChars);
+        return new String(cipheredChars);
     }
 
     private static int getEncryptedIndex(char letter){
