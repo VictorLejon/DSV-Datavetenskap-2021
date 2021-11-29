@@ -9,13 +9,5 @@
 			<li>Nian</li>
 		</ul>
 	</li>
-
-	<li>
-	PROG1
-		<ul>
-			<li>Övning 1</li>
-		</ul>
-	</li>
 </ul>
-
 </p>
