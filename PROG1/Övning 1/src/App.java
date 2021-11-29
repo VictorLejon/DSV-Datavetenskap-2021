@@ -4,16 +4,36 @@ public class App {
     static char[] alfabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'å', 'ä', 'ö'};
     static Scanner in = new Scanner(System.in, "UTF-8");
     public static void main(String[] args) throws Exception {
-        
-        String text = cypher(true);
+    
+        while (true){
+            System.out.println("1. Kryptera text");
+            System.out.println("2. Avkryptera text");
+            System.out.println("3. Avsluta");
 
-        System.out.println(text);
+            String text;
+            String action = in.nextLine();
+            switch(action){
+                case "1":
+                    text = cypher(true);
+                    System.out.println(text);
+                    break;
+                case "2":
+                    text = cypher(false);
+                    System.out.println(text);
+                    break;
+                case "3":
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Välj ett alternativ...");
+                    break;
+            }
+        }
     }
 
     private static char[] getInput(){
         System.out.println("Skriv in textsträng: ");    
         String data = in.nextLine();
-        System.out.println(data);
         return data.toCharArray();
     }
 
@@ -40,7 +60,6 @@ public class App {
     private static int getEncryptedIndex(char letter){
         int index = getIndex(letter);
 
-        //System.out.println(index);
         /*
         int index = IntStream.range(0, alfabet.length)
                         .filter(i -> Character.toLowerCase(letter) == alfabet[i])
