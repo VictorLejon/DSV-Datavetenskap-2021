@@ -15,6 +15,6 @@
 		<ul>
 			<li>Övning 1</li>
 		</ul>
-	<li/>
+	</li>
 </ul>
 </p>
