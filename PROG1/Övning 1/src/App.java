@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.stream.IntStream;
+
 public class App {
     static char[] alfabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'å', 'ä', 'ö'};
     static Scanner in = new Scanner(System.in, "UTF-8");
@@ -15,25 +16,26 @@ public class App {
             switch(action){
                 case "1":
                     text = cipher(true);
-                    System.out.println(text);
+                    System.out.println("Krypterad text: " + text);
                     break;
                 case "2":
                     text = cipher(false);
-                    System.out.println(text);
+                    System.out.println("Avkrypterad text" + text);
                     break;
                 case "3":
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Välj ett alternativ...");
+                    System.out.println("Välj ett giltigt alternativ...");
                     break;
             }
         }
     }
 
     private static char[] getInput(){
-        System.out.println("Skriv in textsträng: ");    
+        System.out.print("Skriv in textsträng: ");    
         String data = in.nextLine();
+	System.out.println();
         return data.toCharArray();
     }
 
