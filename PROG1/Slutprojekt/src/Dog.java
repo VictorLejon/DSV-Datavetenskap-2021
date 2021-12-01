@@ -43,7 +43,6 @@ public class Dog {
             return true;
         }
         else{
-            System.out.println("Error: you can only increase age by a positive integer");
             return false;
         }
     }
