@@ -23,23 +23,50 @@ public class InputWrapper{
         } 
     }
 
-    public String readText(String text){
-        System.out.print(text + "?>");
-        return this.scanner.nextLine();
+    public String readString(String text){
+        String userInput;
+        do{
+            System.out.print(text + "?>");
+            userInput = this.scanner.nextLine().trim();
+        }while(!checkIfValid(userInput));
+        return userInput;
     }
 
     public int readInt(String text){
-        System.out.print(text + "?>");
-        int userInput = this.scanner.nextInt();
-        this.scanner.nextLine();
+        int userInput;
+        do{
+            System.out.print(text + "?>");
+            userInput = this.scanner.nextInt();
+            this.scanner.nextLine();
+        }while(!checkIfValid(userInput));
         return userInput;
     }
 
     public double readDouble(String text){
-        System.out.print(text + "?>");
-        double userInput = this.scanner.nextDouble();
-        this.scanner.nextLine();
+        double userInput;
+        do{
+            System.out.print(text + "?>");
+            userInput = this.scanner.nextDouble();
+            this.scanner.nextLine();
+        }while(!checkIfValid(userInput));
         return userInput;
     }
 
+    private boolean checkIfValid(double userInput){
+        if (userInput == 0) return false;
+        return true;
+    }
+
+    private boolean checkIfValid(int userInput){
+        if (userInput == 0) return false;
+        return true;
+    }
+
+    private boolean checkIfValid(String userInput){
+        if (userInput.equals("")){
+            System.out.println("Error: Cannot enter empty string");
+            return false;
+        } 
+        return true;
+    }
 }
