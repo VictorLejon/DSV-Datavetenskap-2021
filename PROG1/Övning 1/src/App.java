@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.stream.IntStream;
+
 public class App {
     static char[] alfabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'å', 'ä', 'ö'};
     static Scanner in = new Scanner(System.in, "UTF-8");
@@ -14,34 +15,35 @@ public class App {
             String action = in.nextLine();
             switch(action){
                 case "1":
-                    text = cypher(true);
-                    System.out.println(text);
+                    text = cipher(true);
+                    System.out.println("Krypterad text: " + text);
                     break;
                 case "2":
-                    text = cypher(false);
-                    System.out.println(text);
+                    text = cipher(false);
+                    System.out.println("Avkrypterad text" + text);
                     break;
                 case "3":
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Välj ett alternativ...");
+                    System.out.println("Välj ett giltigt alternativ...");
                     break;
             }
         }
     }
 
     private static char[] getInput(){
-        System.out.println("Skriv in textsträng: ");    
+        System.out.print("Skriv in textsträng: ");    
         String data = in.nextLine();
+	System.out.println();
         return data.toCharArray();
     }
 
-    private static String cypher(boolean encrypt){
+    private static String cipher(boolean encrypt){
         char[] letters = getInput();
 
         // Chiffer
-        char[] cypheredChars = new char[letters.length];
+        char[] cipheredChars = new char[letters.length];
 
         int i = 0;
         for (char letter : letters) {
@@ -49,12 +51,12 @@ public class App {
 
             // Check for uppercase
             letter = (Character.isLowerCase(letter)) ? alfabet[newIndex] : Character.toUpperCase(alfabet[newIndex]);
-            cypheredChars[i] = letter;
+            cipheredChars[i] = letter;
             i++;
         }
 
         
-        return new String(cypheredChars);
+        return new String(cipheredChars);
     }
 
     private static int getEncryptedIndex(char letter){
