@@ -56,7 +56,7 @@ public class Dog {
 
     private boolean checkInStringArray(String[] stringArray, String item){
         for (String element : stringArray) {
-            if (item.equals(element.toLowerCase())) return true;
+            if (element.equals(item.toLowerCase())) return true;
         }
         return false;
     }
