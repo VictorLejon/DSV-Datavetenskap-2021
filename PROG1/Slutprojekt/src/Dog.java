@@ -14,7 +14,7 @@ public class Dog {
     
     public String toString(){
         return String.format(
-            "Name: %s Age: %s år Breed: %s Weight: %s kg TailLength: %s dm", this.name, this.age, this.breed, this.weight, getTailLength());
+            "Name: %s Age: %s år Breed: %s Weight: %s kg TailLength: %s cm", this.name, this.age, this.breed, this.weight, getTailLength());
     }
 
     public String getName(){
@@ -37,7 +37,12 @@ public class Dog {
         return calculateTailLength();
     }
 
-    public boolean increaseDogAge(int n){
+    public boolean increaseAge(){
+        this.age += 1;
+        return true;
+    }
+
+    public boolean increaseAge(int n){
         if (n > 0){
             this.age += n;
             return true;
