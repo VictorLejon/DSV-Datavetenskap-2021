@@ -11,9 +11,9 @@
 	</li>
 	<li>
 	PROG1
-	
 		<ul>
 			<li>Övning 1</li>
+			<li>Slutprojekt</li>
 		</ul>
 	</li>
 </ul>
