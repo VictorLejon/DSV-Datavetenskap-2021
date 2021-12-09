@@ -4,6 +4,7 @@ public class Dog {
     private String breed;
     private int age;
     private int weight;
+    private Owner owner;
 
     public Dog(String name, String breed, int age, int weight){
         this.name = name;
@@ -50,6 +51,18 @@ public class Dog {
         else{
             return false;
         }
+    }
+
+    public Owner getOwner(){
+        return this.owner;
+    }
+
+    @UnderTest(id="U8.3")
+    public void setOwner(Owner newOwner){
+        if (this.getOwner() != null) return;
+        this.owner = newOwner;
+        if (newOwner.checkIfDogAdded(this)) return;
+        newOwner.addDog(this);
     }
 
     private double calculateTailLength(){

@@ -34,15 +34,6 @@ public class InputWrapper{
     }
 
     public int readInt(String text){
-        /*
-        int userInput;
-        do{
-            System.out.print(text + "?>");
-            userInput = this.scanner.nextInt();
-            this.scanner.nextLine();
-        }while(!checkIfValid(userInput));
-        return userInput;
-        */
         System.out.print(text + "?>");
         do{
             if (this.scanner.hasNextInt()) return this.scanner.nextInt();
@@ -55,15 +46,6 @@ public class InputWrapper{
     }
 
     public double readDouble(String text){
-        /*
-        double userInput;
-        do{
-            System.out.print(text + "?>");
-            userInput = this.scanner.nextDouble();
-            this.scanner.nextLine();
-        }while(!checkIfValid(userInput));
-        return userInput;
-        */
         System.out.print(text + "?>");
         do{
             if (this.scanner.hasNextDouble()) return this.scanner.nextDouble();
