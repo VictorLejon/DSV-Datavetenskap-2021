@@ -1,5 +1,5 @@
 public class AssignmentSixPointFour{
-    private InputWrapper input = new InputWrapper();
+    private InputHandler input = new InputHandler();
 
     @UnderTest(id="U6.4")
     public Dog addDog(){    

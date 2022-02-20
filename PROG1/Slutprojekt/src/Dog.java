@@ -1,4 +1,8 @@
+// Victor Lejon vile3398
 public class Dog {
+
+    private static final double DACHSHUND_TAIL_LENGTH = 3.7;
+    private static final String[] DACHSHUND_NAMES = {"tax", "dachshund", "mäyräkoira", "teckel"};
 
     private String name;
     private String breed;
@@ -15,7 +19,7 @@ public class Dog {
     
     public String toString(){
         return String.format(
-            "Name: %s Age: %s år Breed: %s Weight: %s kg TailLength: %s cm", this.name, this.age, this.breed, this.weight, getTailLength());
+            "Name: %s Age: %s år Breed: %s Weight: %s kg TailLength: %s cm Owner: %s", this.name, this.age, this.breed, this.weight, getTailLength(), getOwner());
     }
 
     public String getName(){
@@ -32,10 +36,6 @@ public class Dog {
 
     public int getWeight(){
         return this.weight;
-    }
-
-    public double getTailLength(){
-        return calculateTailLength();
     }
 
     public boolean increaseAge(){
@@ -57,7 +57,6 @@ public class Dog {
         return this.owner;
     }
 
-    @UnderTest(id="U8.3")
     public void setOwner(Owner newOwner){
         if (this.getOwner() != null) return;
         this.owner = newOwner;
@@ -65,16 +64,23 @@ public class Dog {
         newOwner.addDog(this);
     }
 
-    private double calculateTailLength(){
-        final double taxTailLength = 3.7;
-        String[] taxar = {"tax", "dachshund", "mäyräkoira", "teckel"};
-        return (checkInStringArray(taxar, this.breed)) ? taxTailLength : this.age*this.weight/10.0;
+    public double getTailLength(){
+        return (checkIfDachshund()) ? DACHSHUND_TAIL_LENGTH : this.age*this.weight/10.0;
     }
 
-    private boolean checkInStringArray(String[] stringArray, String item){
-        for (String element : stringArray) {
-            if (element.equals(item.toLowerCase())) return true;
+    private boolean checkIfDachshund(){
+        for (String name : DACHSHUND_NAMES) {
+            if (name.equals(this.breed.toLowerCase())) return true;
         }
         return false;
+    }
+
+    public void removeOwner(){
+        Owner owner = this.owner;
+        if (this.getOwner() == null) return;
+        this.owner = null;
+
+        if(!owner.checkIfDogAdded(this)) return;
+        owner.removeDog(this);
     }
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class AssignmentSevenPointFour {
     
-    private InputWrapper input = new InputWrapper();
+    private InputHandler input = new InputHandler();
 
     @UnderTest(id="dogs")
     private ArrayList<Dog> dogList = new ArrayList<>();

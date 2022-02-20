@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class AssignmentEightPointThree {
 
-    private InputWrapper input = new InputWrapper();
+    private InputHandler input = new InputHandler();
 
     @UnderTest(id="owners")
     private ArrayList<Owner> ownerList = new ArrayList<>();
@@ -14,6 +14,11 @@ public class AssignmentEightPointThree {
     public void addDogToOwner(){
         Dog dog = this.getDog();
         if (dog == null) return;
+
+        if (dog.getOwner() != null){
+            System.out.println("Error: dog already has an owner");
+            return;
+        }
 
         Owner owner = this.getOwner();
         if (owner == null) return;
@@ -29,10 +34,6 @@ public class AssignmentEightPointThree {
         Dog dog = this.getDogByName(dogName);
         if (dog == null) return null;
 
-        if (dog.getOwner() != null){
-            System.out.println("Error: dog already has an owner");
-            return null;
-        }
         return dog;
     }
 

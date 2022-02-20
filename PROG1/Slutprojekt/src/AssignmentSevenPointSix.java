@@ -25,14 +25,14 @@ public class AssignmentSevenPointSix {
         if (tailComparisonResult == 1) return true;
         else if (tailComparisonResult == -1) return false;
 
-        if (compareNames(first.getName().toLowerCase(), second.getName().toLowerCase())){
+        if (compareNames(first.getName(), second.getName())){
             return true;
         }
         return false;
-    }
+    }                                               
 
     private boolean compareNames(String s, String d){
-        if (s.compareTo(d) > 0){
+        if (s.toLowerCase().compareTo(d.toLowerCase()) > 0){
             return true; 
         } 
         return false;

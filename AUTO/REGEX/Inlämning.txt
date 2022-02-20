@@ -1,0 +1,8 @@
+\b(?<!\+)[akalat]{6}\b						6
+\b(bEt)\w*(oc)\b						15
+\w*(bEt)\w*							58
+\ba\w*(?!\.)							697
+(\w*ha\w*a\w*)|(\w*a\w*ha\w*)					51
+\b(bEt)\w*							53
+\w*(baba|bebe|bibi|bobo|bubu|fafa|fefe|fifi|fofo|fufu)\w*	53
+\w*e\we\we\w*							495

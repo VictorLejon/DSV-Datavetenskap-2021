@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class AssignmentEightPointOne {
     
-    private InputWrapper input = new InputWrapper();
+    private InputHandler input = new InputHandler();
 
     @UnderTest(id="owners")
     private ArrayList<Owner> ownerList = new ArrayList<>();

@@ -1,57 +1,64 @@
+// Victor Lejon vile3398
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-@UnderTest(id="U6.3")
-public class InputWrapper{
+public class InputHandler{
 
     
     private static ArrayList<InputStream> inputStreamsUsed = new ArrayList<>();
     private Scanner scanner;
 
-    public InputWrapper(){
+    public InputHandler(){
         this(System.in);
     }
 
-    public InputWrapper(InputStream inputStream){
+    public InputHandler(InputStream inputStream){
         if(inputStreamsUsed.contains(inputStream)){
             throw new IllegalStateException("Error: InputStream already in use");
         }
-
         else{
             this.scanner = new Scanner(inputStream);
             inputStreamsUsed.add(inputStream);
         } 
     }
 
-    public String readString(String text){
+    public String readString(String promptText){
         String userInput;
         do{
-            System.out.print(text + "?>");
+            printPrompt(promptText);
             userInput = this.scanner.nextLine().trim();
-        }while(!checkIfValid(userInput));
+        }while(!checkIfEmptyString(userInput));
         return userInput;
     }
 
-    public int readInt(String text){
-        System.out.print(text + "?>");
+    public int readInt(String promptText){
+        printPrompt(promptText);
         do{
-            if (this.scanner.hasNextInt()) return this.scanner.nextInt();
+            if (this.scanner.hasNextInt()){
+                int value = this.scanner.nextInt();
+                this.scanner.nextLine();
+                return value;
+            }
             else {
                 this.scanner.nextLine();
-                System.out.print(text + "?>");
+                printPrompt(promptText);
             }
         }while (this.scanner.hasNext());
         return 0;
     }
 
-    public double readDouble(String text){
-        System.out.print(text + "?>");
+    public double readDouble(String promptText){
+        printPrompt(promptText);
         do{
-            if (this.scanner.hasNextDouble()) return this.scanner.nextDouble();
+            if (this.scanner.hasNextDouble()){
+                double value = this.scanner.nextDouble();
+                this.scanner.nextLine();
+                return value;
+            }
             else {
                 this.scanner.nextLine();
-                System.out.print(text + "?>");
+                printPrompt(promptText);
             }
         }while (this.scanner.hasNext());
         return 0;
@@ -69,11 +76,15 @@ public class InputWrapper{
     }
     */
     
-    private boolean checkIfValid(String userInput){
+    private boolean checkIfEmptyString(String userInput){
         if (userInput.equals("")){
-            System.out.println("Error: Cannot enter empty string");
+            //System.out.println("Error: Cannot enter empty string");
             return false;
         } 
         return true;
+    }
+
+    private void printPrompt(String text){
+        System.out.print(text + "?> ");
     }
 }

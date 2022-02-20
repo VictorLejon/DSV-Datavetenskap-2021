@@ -6,7 +6,7 @@ public class AssignmentSevenPointOne {
     @UnderTest(id="dogs")
     private ArrayList<Dog> dogList = new ArrayList<>();
 
-    private InputWrapper input = new InputWrapper();
+    private InputHandler input = new InputHandler();
 
     @UnderTest(id="U6.4")
     public Dog addDog(){    
