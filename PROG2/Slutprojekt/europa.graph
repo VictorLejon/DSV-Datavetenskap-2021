@@ -1,0 +1,14 @@
+file:europa.gif
+London;245.0;356.0;Kiruna;486.0;86.0;Stockholm;466.0;233.0;Reykjavík;165.0;71.0;Madrid;134.0;549.0
+London;Madrid;Train;16
+London;Reykjavík;Plane;3
+London;Stockholm;Plane;3
+Kiruna;Reykjavík;Plane;5
+Kiruna;Stockholm;Car;18
+Stockholm;Kiruna;Car;18
+Stockholm;Reykjavík;Boat;35
+Stockholm;London;Plane;3
+Reykjavík;London;Plane;3
+Reykjavík;Stockholm;Boat;35
+Reykjavík;Kiruna;Plane;5
+Madrid;London;Train;16
