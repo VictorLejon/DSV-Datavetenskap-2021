@@ -28,6 +28,8 @@
 			<li>Labb 1</li>
 			<li>Labb 2</li>
 			<li>Labb 3</li>
+			<li>Labb 4</li>
+			<li>Projekt</li>
 		</ul>
 	</li>
 	<li>
