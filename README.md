@@ -71,6 +71,14 @@
 			</li>
 		</ul>
 	</li>
+	<li>
+	Logik
+		<ul>
+			<li>
+			Inlämningsuppgift
+			</li>
+		</ul>
+	</li>
 	
 </ul>
 </p>
