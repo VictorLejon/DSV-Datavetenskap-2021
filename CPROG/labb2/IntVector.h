@@ -11,7 +11,7 @@ class IntVector
     public:
         
         IntVector(); // Default-konstruktor
-        IntVector(const IntVector& other); // Copy-konstruktor
+        //IntVector(const IntVector& other); // Copy-konstruktor
         IntVector(IntVector&& other); // Move-konstruktor
         ~IntVector(); // Destruktor
 

@@ -119,10 +119,6 @@ const Datum& Datum::operator++()
 {
   return *this += 1;
 }
-for (size_t i = 0; i < count; i++)
-{
-  /* code */
-}
 
 // operator ++ (postfix)
 const Datum Datum::operator++(int)

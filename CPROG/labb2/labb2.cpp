@@ -25,7 +25,7 @@ int main ()
     IntVector vek1 { 10,11,16,20,23 };
 	IntVector vek2;
 	IntVector vek3( vek1 );
-	IntVector vek4( func() );
+	IntVector vek4( func() ); 
 	
 	std::cout << "vek4: " << vek4 << std::endl;
 	
